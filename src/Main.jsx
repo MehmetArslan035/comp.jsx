@@ -13,7 +13,7 @@
 //! CSS dosyalari dogrudan import edilir. Export edilmelerine gerek yoktur.
 //? CSS dosyalari import "path" seklinde eklenir.
 import "./Main.css";
-
+import  landscape from"./img/pic.jpg"
 
 const headerStyle = {
     color: "teal",
@@ -37,8 +37,11 @@ const Main = () => {
         illo deserunt odit unde!
       </p>
       <div>
-        <img src="https://cdn.pixabay.com/photo/2023/07/06/09/39/islet-8110071_1280.jpg" alt="" />
+        <img src="https://cdn.pixabay.com/photo/2018/07/16/16/08/island-3542290_1280.jpg" alt="" />
       </div>
+
+      <img className="img" src="landscape" alt="" />
+      <img className="img" src="./beach.jpg" alt="" />
     </main>
   );
 };
