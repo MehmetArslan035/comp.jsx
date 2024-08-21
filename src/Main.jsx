@@ -13,19 +13,27 @@
 //! CSS dosyalari dogrudan import edilir. Export edilmelerine gerek yoktur.
 //? CSS dosyalari import "path" seklinde eklenir.
 import "./Main.css";
-import  landscape from"./img/pic.jpg"
 
+//? Dahili bir resim eklemek icin import yapmak gereklidir.
+//? ancak public klasöründeki resimler importsuz bir şekilde
+//? erisilebilir.
+import landscape from "./img/pic.jpg";
+
+//? local ve global style degiskeni
 const headerStyle = {
-    color: "teal",
-    backgroundColor: "lightGray",
-    fontWeight:"bold",
-}
+  color: "teal",
+  backgroundColor: "lightGray",
+  fontWeight: "bold",
+};
 
 const Main = () => {
   return (
     <main>
-      <h2 style={{ color:"red",background:"gray" }}>Main Section</h2>
+      {/* JSX */}
+      {/* //* Inline CSS, (key-value), notasyon olarak camelCase */}
+      <h2 style={{ color: "red", backgroundColor: "gray" }}>Main Section</h2>
       <h3 style={headerStyle}>Other Header</h3>
+      {/* //* External CSS'den stil geldi */}
       <p className="par">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, itaque
         recusandae nesciunt ut optio nam voluptas est provident quas
@@ -37,11 +45,16 @@ const Main = () => {
         illo deserunt odit unde!
       </p>
       <div>
-        <img src="https://cdn.pixabay.com/photo/2018/07/16/16/08/island-3542290_1280.jpg" alt="" />
+        <img
+          className="img"
+          src="https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_640.jpg"
+          alt="manzara"
+        />
+        {/* //* Lokal ortamımızda buluna bir resmi dogrudan path vererek cagiramayiz. Bunun yerine import yaparız */}
+        <img className="img" src={landscape} alt="" />
+        {/* //* Public klasöründeki resimlere doğrudan ulaşıbildiği için yol vererek eriştik. Ana dizin) */}
+        <img className="img" src="./beach.jpg" alt="lake" />
       </div>
-
-      <img className="img" src="landscape" alt="" />
-      <img className="img" src="./beach.jpg" alt="" />
     </main>
   );
 };
